@@ -8,29 +8,27 @@
 </head>
 <body>
 
-<header>
-    <div class="logo-container">
-        <img src="logo.png" alt="Friendly Freight Logo">
-    </div>
+<header class="header">
+    <div class="container">
+        <img src="logo.png" class="logo">
 
-    <nav>
         <div class="menu-toggle" id="menu-toggle">☰</div>
 
-        <ul class="nav-links" id="nav-links">
+        <ul class="nav" id="nav">
             <li><a href="#">Home</a></li>
             <li><a href="#">Services</a></li>
 
             <li class="dropdown">
-                <a href="#">More ▾</a>
+                <button class="drop-btn">More ▾</button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">About</a></li>
                     <li><a href="#">Careers</a></li>
                     <li><a href="#">FAQ</a></li>
                 </ul>
             </li>
 
             <li class="dropdown">
-                <a href="#">Contact ▾</a>
+                <button class="drop-btn">Contact ▾</button>
                 <ul class="dropdown-menu">
                     <li><a href="#">Email</a></li>
                     <li><a href="#">Phone</a></li>
@@ -38,18 +36,14 @@
                 </ul>
             </li>
         </ul>
-    </nav>
+    </div>
 </header>
 
 <section class="hero">
-    <h1>Welcome to Friendly Freight</h1>
+    <h1>Welcome to<br>Friendly Freight</h1>
     <p>Reliable. Fast. Friendly shipping solutions.</p>
 </section>
 
-<footer>
-    <p>© 2026 Friendly Freight</p>
-</footer>
-
-<script src="script.js"></script>
 </body>
+<script src="script.js"></script>
 </html>
