@@ -5,14 +5,15 @@
     font-family: Arial, sans-serif;
 }
 
-/* BACKGROUND */
-body {
-    background: linear-gradient(to right, #ffd54f, #ff9800);
-    min-height: 100vh;
+/* HEADER (now transparent) */
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0;
 }
 
-/* TOP BAR (NO BLACK ANYMORE) */
-.top-bar {
+/* NAV CONTAINER */
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,34 +21,25 @@ body {
 }
 
 /* HAMBURGER */
-.hamburger {
+.menu-toggle {
     font-size: 28px;
     cursor: pointer;
-    background: rgba(0,0,0,0.2);
-    padding: 8px 12px;
-    border-radius: 8px;
     color: black;
 }
 
-/* LOGO TOP RIGHT */
-.logo {
-    height: 50px;
-
-    /* TEMP FIX if background not removed */
-    mix-blend-mode: multiply;
+/* SMALL LOGO TOP RIGHT */
+.logo-small {
+    height: 45px;
 }
 
 /* NAV MENU */
 .nav {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.85);
-    list-style: none;
     display: none;
     flex-direction: column;
-    text-align: center;
+    background: #111;
+    position: absolute;
+    top: 70px;
+    width: 100%;
 }
 
 .nav.active {
@@ -56,6 +48,7 @@ body {
 
 .nav li {
     padding: 15px;
+    text-align: center;
 }
 
 .nav a, .drop-btn {
@@ -77,11 +70,16 @@ body {
     padding: 10px;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
+    height: 100vh;
+    background: linear-gradient(to right, #ffd54f, #ff9800);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px; /* prevents overlap */
     text-align: center;
-    margin-top: 50px;
-    padding: 20px;
 }
 
 .hero h1 {
@@ -89,13 +87,10 @@ body {
     color: #111;
 }
 
-/* BIG LOGO */
+/* MAIN LOGO */
 .hero-logo {
-    width: 250px;
+    width: 220px;
     margin: 20px 0;
-
-    /* TEMP FIX */
-    mix-blend-mode: multiply;
 }
 
 .hero p {
@@ -107,16 +102,15 @@ body {
 @media (min-width: 768px) {
 
     .nav {
-        position: static;
         display: flex !important;
         flex-direction: row;
         justify-content: center;
         background: none;
+        position: static;
         gap: 40px;
-        margin-top: 10px;
     }
 
-    .hamburger {
+    .menu-toggle {
         display: none;
     }
 
@@ -129,10 +123,10 @@ body {
         top: 30px;
         left: 0;
         display: none;
-        background: #222;
     }
 
     .dropdown:hover .dropdown-menu {
         display: block;
+        background: #222;
     }
 }

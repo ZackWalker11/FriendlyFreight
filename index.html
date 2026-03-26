@@ -9,33 +9,39 @@
 
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar">
-    <div class="hamburger" id="menu-toggle">☰</div>
-    <img src="logo.png" class="logo">
-</div>
+<header class="header">
+    <div class="nav-container">
 
-<!-- MOBILE MENU -->
-<ul class="nav" id="nav">
-    <li><a href="#">HOME</a></li>
-    <li><a href="#">SERVICES</a></li>
-    <li><a href="#">ABOUT</a></li>
+        <!-- LEFT: Hamburger -->
+        <div class="menu-toggle" id="menu-toggle">☰</div>
 
-    <li class="dropdown">
-        <button class="drop-btn">CONTACT ▾</button>
-        <ul class="dropdown-menu">
-            <li><a href="#">Email</a></li>
-            <li><a href="#">Phone</a></li>
-            <li><a href="#">Location</a></li>
-        </ul>
-    </li>
-</ul>
+        <!-- RIGHT: Logo -->
+        <img src="logo.png" class="logo-small">
+
+    </div>
+
+    <!-- NAV MENU -->
+    <ul class="nav" id="nav">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">SERVICES</a></li>
+        <li><a href="#">ABOUT</a></li>
+
+        <li class="dropdown">
+            <button class="drop-btn">CONTACT ▾</button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Email</a></li>
+                <li><a href="#">Phone</a></li>
+                <li><a href="#">Location</a></li>
+            </ul>
+        </li>
+    </ul>
+</header>
 
 <!-- HERO -->
 <section class="hero">
     <h1>Welcome To</h1>
 
-    <!-- BIG LOGO IN HERO -->
+    <!-- LOGO replaces text -->
     <img src="logo.png" class="hero-logo">
 
     <p>Reliable. Fast. Friendly shipping solutions.</p>
