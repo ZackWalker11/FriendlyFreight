@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friendly Freight</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friendly Freight</title>
+<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header class="header">
-    <div class="container">
-        <img src="logo.png" class="logo">
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="hamburger" id="menu-toggle">☰</div>
+    <img src="logo.png" class="logo">
+</div>
 
-        <div class="menu-toggle" id="menu-toggle">☰</div>
+<!-- MOBILE MENU -->
+<ul class="nav" id="nav">
+    <li><a href="#">HOME</a></li>
+    <li><a href="#">SERVICES</a></li>
+    <li><a href="#">ABOUT</a></li>
 
-        <ul class="nav" id="nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
-
-            <li class="dropdown">
-                <button class="drop-btn">More ▾</button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </li>
-
-            <li class="dropdown">
-                <button class="drop-btn">Contact ▾</button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Email</a></li>
-                    <li><a href="#">Phone</a></li>
-                    <li><a href="#">Location</a></li>
-                </ul>
-            </li>
+    <li class="dropdown">
+        <button class="drop-btn">CONTACT ▾</button>
+        <ul class="dropdown-menu">
+            <li><a href="#">Email</a></li>
+            <li><a href="#">Phone</a></li>
+            <li><a href="#">Location</a></li>
         </ul>
-    </div>
-</header>
+    </li>
+</ul>
 
+<!-- HERO -->
 <section class="hero">
-    <h1>Welcome to<br>Friendly Freight</h1>
+    <h1>Welcome To</h1>
+
+    <!-- BIG LOGO IN HERO -->
+    <img src="logo.png" class="hero-logo">
+
     <p>Reliable. Fast. Friendly shipping solutions.</p>
 </section>
 
-</body>
 <script src="script.js"></script>
+</body>
 </html>
