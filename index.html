@@ -9,89 +9,90 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-/* GLOBAL */
-* { margin:0; padding:0; box-sizing:border-box; }
-body, html { font-family: Arial, sans-serif; height: 100%; overflow: hidden; }
-
-/* NAVBAR */
+/* BODY & NAVBAR */
+body {
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background:white;
+    color:#111;
+}
 .navbar { background:white !important; }
 .nav-link { color:#111 !important; }
-.navbar-dark .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23000000' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/ %3E%3C/svg%3E");
-}
 
 /* HERO TOP */
 .hero-top {
+    min-height:70vh;
+    background:white;
+    position:relative;
+    z-index:0;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    min-height:70vh;
-    background:white;
-    overflow:visible;
     text-align:center;
-    padding:0 15px;
 }
-
-/* LOGO & TAGLINE */
-.logo-wrapper { position: relative; display:inline-block; }
-.hero-logo { width: 500px;  transition: transform 0.3s ease; }
-.hero-logo:hover { transform: scale(1.05); }
+.hero-top::after {
+    content:"";
+    position:absolute;
+    bottom:-60px;
+    width:100%;
+    height:120px;
+    background: linear-gradient(to right,#ffd54f,#ff9800);
+    border-top-left-radius:100% 120px;
+    border-top-right-radius:100% 120px;
+    z-index:0;
+}
+.hero-logo {
+    width:300px;
+    max-width:90%;
+    transition: transform 0.3s ease;
+}
+.hero-logo:hover { transform:scale(1.05); }
 .tagline {
-    margin-top: 10px;
-    font-weight:bold;
-    font-size:1.2rem;
-    color:#111;
-}
-
-/* HERO BUTTONS */
-.hero-top .btn {
-    border-radius: 30px;
-    padding:10px 25px;
     font-weight:bold;
     margin-top:15px;
 }
-.btn-email { background:#FFA726; color:white; border:none; }
-.btn-email:hover { background:#FB8C00; }
-.btn-call { background:#FFD54F; color:black; border:none; }
-.btn-call:hover { background:#FFB300; }
 
-/* HERO BOTTOM CURVE */
-.hero-bottom {
-    height:25vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start; /* aligns content to top */
-    padding-top: 30px; /* moves content slightly down from very top */
-    align-items:center;
-    background: linear-gradient(to right, #ffd54f, #ff9800);
-    border-top-left-radius:100% 120px;
-    border-top-right-radius:100% 120px;
-    color:#111;
-    text-align:center;
-    margin-top:auto;
-}
-.mission-btn {
-    background:#ffca28;
-    color:#111;
-    border-radius:20px;
-    padding:8px 20px;
+/* TOP BUTTONS */
+.hero-top .btn {
+    border-radius:30px;
+    margin:10px;
     font-weight:bold;
-    font-size:0.95rem;
-    cursor:pointer;
-    box-shadow:0 4px 10px rgba(0,0,0,0.15);
-    margin-top:10px;
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    transition:0.2s;
 }
-.mission-btn:hover { background:#ffb300; transform:translateY(-2px); box-shadow:0 6px 12px rgba(0,0,0,0.2); }
+.btn-email { background-color:#FFA726; color:white; border:none; }
+.btn-email:hover { background-color:#FB8C00; }
+.btn-call { background-color:#FFD54F; color:black; border:none; }
+.btn-call:hover { background-color:#FFB300; }
 
-/* MODAL */
-.modal-body p { line-height:1.6; }
+/* HERO BOTTOM (Mission section now scrollable) */
+.hero-bottom {
+    background: linear-gradient(to right, #ffd54f, #ff9800);
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px; /* smaller padding since we’re overlapping */
+    margin-top: -60px; /* negative margin to pull it up onto the curve */
+    border-top-left-radius: 100% 60px;
+    border-top-right-radius: 100% 60px;
+    position: relative;
+    z-index: 2; /* make sure it’s above hero-top curve */
+}
 
-/* VUE HEIGHT FIX FOR MOBILE */
-:root { --vh: 100%; }
+/* MISSION TEXT */
+.mission-text {
+    max-width:800px;
+    font-size:1.1rem;
+    line-height:1.6;
+    margin-bottom:15px;
+}
 </style>
 </head>
+
 <body>
 
 <!-- NAVBAR -->
@@ -100,7 +101,6 @@ body, html { font-family: Arial, sans-serif; height: 100%; overflow: hidden; }
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto text-center">
         <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
@@ -109,63 +109,36 @@ body, html { font-family: Arial, sans-serif; height: 100%; overflow: hidden; }
         <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
       </ul>
     </div>
-
     <a class="navbar-brand ms-auto" href="#"><img src="logo.png" height="40"></a>
   </div>
 </nav>
 
 <!-- HERO TOP -->
 <section class="hero-top">
-  <div class="logo-wrapper">
+    <h1>Welcome To</h1>
     <img src="logo.png" class="hero-logo">
     <p class="tagline">Reliable. Fast. Friendly Shipping Solutions.</p>
-  </div>
 
-  <div class="d-flex gap-3 justify-content-center flex-wrap">
-    <a href="mailto:hello@friendlyfreight.net" class="btn btn-email">Email Us</a>
-    <a href="tel:6162839467" class="btn btn-call">Call Us</a>
-  </div>
-</section>
-
-<!-- HERO BOTTOM -->
-<section class="hero-bottom">
-  <h2>Your Trusted Freight Partner</h2>
-  <div class="mission-btn" data-bs-toggle="modal" data-bs-target="#missionModal">Mission Statement</div>
-</section>
-
-<!-- MODAL -->
-<div class="modal fade" id="missionModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content mission-modal-content text-center p-4">
-
-      <div class="modal-header border-0 justify-content-center">
-        <h5 class="modal-title display-6 fw-bold">Our Mission</h5>
-        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
-      </div>
-
-      <div class="modal-body px-4">
-        <p class="mission-text">
-          We built Friendly Freight Network the way brokerage should be done — AI and technology working quietly in the background so humans stay front and center. Shippers get a real person who knows their freight. Carriers get a real person who pays on time and picks up the phone. We believe a rising tide raises all ships — when our carriers succeed, our shippers succeed, and so do we. Technology makes us efficient. People make us Friendly.
-        </p>
-      </div>
-
-      <div class="modal-footer border-0 justify-content-center">
-        <button type="button" class="btn btn-warning fw-bold px-4" data-bs-dismiss="modal">Close</button>
-      </div>
-
+    <div class="d-flex justify-content-center flex-wrap mt-3">
+        <a href="mailto:hello@friendlyfreight.net" class="btn btn-email px-4">Email Us</a>
+        <a href="tel:6162839467" class="btn btn-call px-4">Call Us</a>
     </div>
-  </div>
-</div>
+</section>
+
+<!-- HERO BOTTOM / MISSION SECTION -->
+<section class="hero-bottom">
+    <h2>Your Trusted Freight Partner</h2>
+    <p class="mission-text">
+        We built Friendly Freight Network the way brokerage should be done — AI and technology working quietly in the background so humans stay front and center.
+    </p>
+    <p class="mission-text">
+        Shippers get a real person who knows their freight. Carriers get a real person who pays on time and picks up the phone.
+    </p>
+    <p class="mission-text">
+        We believe a rising tide raises all ships — when our carriers succeed, our shippers succeed, and so do we. Technology makes us efficient. People make us Friendly.
+    </p>
+</section>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-function setVh() {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-setVh();
-window.addEventListener('resize', setVh);
-</script>
-
 </body>
 </html>
