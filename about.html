@@ -3,48 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About - Friendly Freight</title>
+<title>About Us - Friendly Freight</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
 <link rel="stylesheet" href="styles.css">
+
+<style>
+/* Body & Navbar */
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:white; color:#111; display:flex; flex-direction:column; min-height:100vh;}
+.navbar { background:white !important; }
+.nav-link { color:#111 !important; }
+
+/* PAGE CONTENT */
+.page-section { max-width: 900px; margin: 60px auto; padding: 0 20px; text-align: center; flex:1; }
+.page-section h1 { font-size:2.5rem; margin-bottom:20px; }
+.page-section p { font-size:1.1rem; line-height:1.6; margin-bottom:15px; }
+
+/* Buttons */
+.btn-email { background-color:#FFA726; color:white; border:none; border-radius:30px; padding:10px 25px; font-weight:bold; transition:0.2s; }
+.btn-email:hover { background-color:#FB8C00; color:white; }
+.btn-call { background-color:#FFD54F; color:black; border:none; border-radius:30px; padding:10px 25px; font-weight:bold; }
+.btn-call:hover { background-color:#FFB300; color:black; }
+
+/* Curved Footer */
+.footer-curve {
+    position: relative;
+    height: 80px;
+    background: linear-gradient(to right, #ffd54f, #ff9800);
+    border-top-left-radius: 50% 20px;
+    border-top-right-radius: 50% 20px;
+    z-index:0;
+    margin-top: auto; /* push to bottom */
+}
+</style>
 </head>
 
 <body>
 
-<header class="header">
-    <div class="nav-container">
-        <div class="menu-toggle" id="menu-toggle">☰</div>
-        <img src="logo.png" class="logo-small">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg shadow-sm px-3">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto text-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">SERVICES</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+      </ul>
     </div>
 
-    <ul class="nav" id="nav">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="services.html">SERVICES</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-    </ul>
-</header>
+    <a class="navbar-brand ms-auto" href="#"><img src="logo.png" height="40"></a>
+  </div>
+</nav>
 
-<section class="hero-top">
-    <h1>About Us</h1>
+<!-- PAGE CONTENT -->
+<section class="page-section">
+  <h1>About Us</h1>
+  <p>
+    Friendly Freight Network was built the way brokerage should be done — AI and technology quietly support humans so shippers and carriers get real people who know their freight.
+  </p>
+  <p>
+    We believe a rising tide raises all ships — when our carriers succeed, our shippers succeed, and so do we. Technology makes us efficient. People make us Friendly.
+  </p>
+
+  <a href="contact.html" class="btn btn-email mt-3">Get in Touch</a>
 </section>
 
-<section class="hero-bottom">
-    <div class="team">
+<!-- CURVED FOOTER -->
+<div class="footer-curve"></div>
 
-        <div class="person">
-            <img src="person1.jpg" alt="Person 1">
-            <h3>John Doe</h3>
-            <p>Founder - 10+ years in logistics and freight management.</p>
-        </div>
-
-        <div class="person">
-            <img src="person2.jpg" alt="Person 2">
-            <h3>Jane Smith</h3>
-            <p>Operations Manager - Expert in supply chain efficiency.</p>
-        </div>
-
-    </div>
-</section>
-
-<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
