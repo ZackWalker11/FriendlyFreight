@@ -58,18 +58,18 @@ body, html { font-family: Arial, sans-serif; height: 100%; overflow: hidden; }
 
 /* HERO BOTTOM CURVE */
 .hero-bottom {
-    height: 25vh;
-    background: linear-gradient(to right, #ffd54f, #ff9800);
+    height:25vh;
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    justify-content:flex-start; /* aligns content to top */
+    padding-top: 30px; /* moves content slightly down from very top */
     align-items:center;
-    position: relative;
-    border-top-left-radius: 100% 120px;
-    border-top-right-radius: 100% 120px;
-    z-index:0;
+    background: linear-gradient(to right, #ffd54f, #ff9800);
+    border-top-left-radius:100% 120px;
+    border-top-right-radius:100% 120px;
     color:#111;
     text-align:center;
+    margin-top:auto;
 }
 .mission-btn {
     background:#ffca28;
