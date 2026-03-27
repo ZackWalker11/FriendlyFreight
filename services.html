@@ -7,39 +7,38 @@
 
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
 
 <style>
-/* Body & Navbar */
-body { font-family: Arial, sans-serif; margin:0; padding:0; background:white; color:#111; display:flex; flex-direction:column; min-height:100vh;}
+body, html { font-family: Arial, sans-serif; margin:0; padding:0; background:white; color:#111; min-height:100vh; display:flex; flex-direction:column; }
 .navbar { background:white !important; }
 .nav-link { color:#111 !important; }
 
 /* PAGE CONTENT */
-.page-section { max-width: 900px; margin: 60px auto; padding: 0 20px; text-align: center; flex:1; }
+.page-section { max-width:900px; margin:80px auto 0; padding:0 20px; text-align:center; flex:1; }
 .page-section h1 { font-size:2.5rem; margin-bottom:20px; }
-.page-section p { font-size:1.1rem; line-height:1.6; margin-bottom:15px; }
-.page-section ul { text-align: left; display: inline-block; margin-top: 15px; font-size:1.1rem; }
+.page-section p, .page-section ul { font-size:1.1rem; line-height:1.6; margin-bottom:15px; text-align:left; display:inline-block; }
+.page-section ul { text-align:left; }
 
-/* Buttons */
+/* BUTTONS */
 .btn-email { background-color:#FFA726; color:white; border:none; border-radius:30px; padding:10px 25px; font-weight:bold; transition:0.2s; }
 .btn-email:hover { background-color:#FB8C00; color:white; }
-.btn-call { background-color:#FFD54F; color:black; border:none; border-radius:30px; padding:10px 25px; font-weight:bold; }
-.btn-call:hover { background-color:#FFB300; color:black; }
 
-/* Curved Footer */
-.footer-curve {
-    position: relative;
-    height: 80px;
+/* CURVED FOOTER */
+.hero-bottom {
+    height:25vh;
     background: linear-gradient(to right, #ffd54f, #ff9800);
-    border-top-left-radius: 50% 20px;
-    border-top-right-radius: 50% 20px;
-    z-index:0;
-    margin-top: auto; /* push to bottom */
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border-top-left-radius:100% 120px;
+    border-top-right-radius:100% 120px;
+    color:#111;
+    text-align:center;
+    margin-top:auto;
 }
 </style>
 </head>
-
 <body>
 
 <!-- NAVBAR -->
@@ -48,7 +47,6 @@ body { font-family: Arial, sans-serif; margin:0; padding:0; background:white; co
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto text-center">
         <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
@@ -57,7 +55,6 @@ body { font-family: Arial, sans-serif; margin:0; padding:0; background:white; co
         <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
       </ul>
     </div>
-
     <a class="navbar-brand ms-auto" href="#"><img src="logo.png" height="40"></a>
   </div>
 </nav>
@@ -79,7 +76,7 @@ body { font-family: Arial, sans-serif; margin:0; padding:0; background:white; co
 </section>
 
 <!-- CURVED FOOTER -->
-<div class="footer-curve"></div>
+<section class="hero-bottom"></section>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
